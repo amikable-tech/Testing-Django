@@ -6,7 +6,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterUserForm
-
+from django.contrib.auth.views import LoginView
+from django.urls import reverse
 
 def login_user(request):
 	if request.method == "POST":
@@ -15,7 +16,7 @@ def login_user(request):
 		user = authenticate(request, username = username, password = password)
 		if user is not None:
 			login(request, user)
-			return redirect ('home')
+			return redirect ('booking')
 		else:
 			messages.success = (request, ("Invalid username or password, verify details and login again."))
 			return redirect('login')
@@ -39,7 +40,7 @@ def register_user(request):
 			user = authenticate(username=username, password=password)
 			login(request, user)
 			messages.success(request, ("Registration successful, please login!"))
-			return redirect('main/home.html')
+			return redirect('home')
 	else:
 		form = RegisterUserForm()
 	return render(request, 'main/register.html', {
@@ -69,3 +70,7 @@ def booking_success(request):
 def home(request):
 	return render(request, 'main/home.html', {})
 
+
+class CustomLoginView(LoginView):
+	def get_success_url(self):
+		return redirect('booking')
