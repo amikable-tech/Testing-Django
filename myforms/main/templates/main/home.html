@@ -3,13 +3,13 @@
 <html lang="en">
 {% static '' %}
     <head>
-        <meta charset="utf-8">
+        '<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Medic Care Bootstrap 5 CSS Template</title>
+        <title>Your favorite House Doctor</title>
 
         <!-- CSS FILES -->        
         
@@ -29,8 +29,7 @@
         <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
 
         <link href="{% static 'css/styles.css' %}" rel="stylesheet">
-}
-}
+
 <!--
 
 TemplateMo 566 Medic Care
@@ -62,8 +61,21 @@ https://templatemo.com/tm-566-medic-care
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">About</a>
+                                <a class="nav-link" href="{% url 'register_user' %}">Signup</a>
                             </li>
+
+                            <li class="nav-item">
+                                 <a class="nav-link" href="{% url 'login' %}">Login</a>
+                             </li>
+
+                              <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'booking' %}">Book Appointment</a>
+                                </li>
+
+                              <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                                </li>
+
 
                             <li class="nav-item">
                                 <a class="nav-link" href="#timeline">Timeline</a>
@@ -78,10 +90,7 @@ https://templatemo.com/tm-566-medic-care
                                 <a class="nav-link" href="#reviews">Testimonials</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#booking">Booking</a>
-                            </li>
-
+                           
                             <li class="nav-item">
                                 <a class="nav-link" href="#contact">Contact</a>
                             </li>
@@ -374,51 +383,7 @@ https://templatemo.com/tm-566-medic-care
                 </div>
             </section>
 
-            <section class="section-padding" id="booking">
-                <div class="container">
-                    <div class="row">
-                    
-                        <div class="col-lg-8 col-12 mx-auto">
-                            <div class="booking-form">
-                                
-                                <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
-                            
-                                <form role="form" action="#booking" method="post">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required>
-                                        </div>
-
-                                        <div class="col-lg-6 col-12">
-                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
-                                        </div>
-
-                                        <div class="col-lg-6 col-12">
-                                            <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="Phone: 123-456-7890">
-                                        </div>
-
-                                        <div class="col-lg-6 col-12">
-                                            <input type="date" name="date" id="date" value="" class="form-control">
-                                            
-                                        </div>
-
-                                        <div class="col-12">
-                                            <textarea class="form-control" rows="5" id="message" name="message" placeholder="Additional Message"></textarea>
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-4 col-6 mx-auto">
-                                            <button type="submit" class="form-control" id="submit-button">Book Now</button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
+ 
         </main>
 
         <footer class="site-footer section-padding" id="contact">
